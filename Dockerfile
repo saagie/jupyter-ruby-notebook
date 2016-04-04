@@ -22,6 +22,8 @@ RUN gem install rbczmq iruby nyaplot distribution
 
 RUN iruby register
 
-ADD examples-notebook ./Ruby-examples
-ADD data ./data
-CMD jupyter notebook
+CMD jupyter notebook \
+    --ip=* \
+    --MappingKernelManager.time_to_dead=10 \
+    --MappingKernelManager.first_beat=3 \
+    --notebook-dir=/notebooks-dir/
