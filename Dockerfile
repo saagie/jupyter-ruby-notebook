@@ -12,13 +12,13 @@ RUN apt-get update \
         gnuplot-nox                            \
         libgsl0-dev                            \
         libtool autoconf automake              \
-        zlib1g-dev                             \
+        zlib1g-dev libleveldb-dev              \
         libsqlite3-dev                         \
         libmagick++-dev imagemagick            \
         libatlas-base-dev             &&       \
     apt-get clean
 
-RUN gem install rbczmq iruby nyaplot distribution
+RUN gem install rbczmq iruby nyaplot distribution impala mikon statsample mongo cabalist ml classifier-reborn
 
 RUN iruby register
 
